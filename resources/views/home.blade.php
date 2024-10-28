@@ -93,16 +93,10 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-8 lg:justify-start justify-center">
-                    <button id="slider-button-left" class="swiper-button-prev group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !top-2/4 !-translate-y-8 !left-0 !text-gray-400 hover:!text-white" data-carousel-prev>
-                        
-                    </button>
-                    <button id="slider-button-right" class="swiper-button-next group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !top-2/4 !-translate-y-8  !right-0 !text-gray-400 hover:!text-white" data-carousel-next>
-                        
-                        </button>
+                        <button id="slider-button-left" class="swiper-button-prev group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !top-2/4 !-translate-y-8 !left-0 !text-gray-400 hover:!text-white" data-carousel-prev></button>
+                        <button id="slider-button-right" class="swiper-button-next group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !top-2/4 !-translate-y-8  !right-0 !text-gray-400 hover:!text-white" data-carousel-next></button>
                     </div>
-                    {{-- <div class="swiper-pagination"></div> --}}
                 </div>
-            
                 <div class="w-2/5">
                     <div class="bg-white px-12 p-8">
                         <h1 class="py-1">Experiencias</h1>
@@ -114,10 +108,46 @@
                 </div>
             </div>
         </div>
-        
-        
     </div>
-    <div id="feast" class="feast"></div>
+    <div id="feast" class="p-6">
+        <div class="mx-auto container p-3">
+            <h1 class="text-5xl">BANQUETE</h1>
+            <p>Decoración que resaltan los platillos que enamoran el alma</p>
+        </div>
+        <div class="mx-auto container p-3 flex">
+        {{-- Swiper --}}
+      <div class="w-full relative">
+        <div class="swiper multiple-slide-carousel swiper-container relative">
+         <div class="swiper-wrapper pb-1">
+           <div class="swiper-slide">
+            <div class="flex justify-center items-center">
+                <img src="{{ asset('img/feast-slide-1.png') }}" alt="">
+            </div>
+           </div>
+           <div class="swiper-slide">
+            <div class="flex justify-center items-center">
+                <img src="{{ asset('img/feast-slide-1.png') }}" alt="">
+            </div>
+           </div>
+           <div class="swiper-slide">
+            <div class="flex justify-center items-center">
+                <img src="{{ asset('img/feast-slide-1.png') }}" alt="">
+            </div>
+           </div>
+           <div class="swiper-slide">
+            <div class="flex justify-center items-center">
+                <img src="{{ asset('img/feast-slide-1.png') }}" alt="">
+            </div>
+           </div>
+         </div>
+         <div class="flex items-center gap-8 lg:justify-start justify-center">
+            <button id="slider-button-left" class="swiper-button-prev group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !-translate-y-8 !left-0 !text-gray-400 hover:!text-white" data-carousel-prev></button>
+            <button id="slider-button-right" class="swiper-button-next group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !-translate-y-8  !right-0 !text-gray-400 hover:!text-white" data-carousel-next></button>
+        </div>
+        <p class="py-1 text-center"><a href="">VER MÁS</a></p>
+        </div>
+        </div>
+    </div>
     <div id="socialmedia" class=""></div>
     <div id="contact" class="">
         <h1 class="text-3xl">SOLICITAR INFORMACIÓN</h1>
@@ -229,4 +259,29 @@
     },
     });
 </script>
+<script>
+    var swiper = new Swiper(".multiple-slide-carousel", {
+      loop: true,
+      slidesPerView: 3,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: ".multiple-slide-carousel .swiper-button-next",
+        prevEl: ".multiple-slide-carousel .swiper-button-prev",
+      },
+      breakpoints: {
+       1920: {
+           slidesPerView: 3,
+           spaceBetween: 30
+       },
+       1028: {
+           slidesPerView: 3,
+           spaceBetween: 30
+       },
+       990: {
+           slidesPerView: 2,
+           spaceBetween: 0
+       }
+     }
+    });
+   </script>
 </html>
