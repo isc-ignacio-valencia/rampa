@@ -18,7 +18,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
-<header class="bg-green-light">
+<header class="bg-green-light w-full fixed z-50 mt-[-60px] shadow shadow-gray-500/50">
     <div class="container mx-auto py-4">
         <div class="content flex">
             <div class="logo flex w-1/6"> 
@@ -29,11 +29,11 @@
             <div class="menu flex w-3/6 px-4">
                 <nav class="flex">
                     <ul class="flex uppercase">
-                        <li class="px-2"><a href="">Inicio</a></li>
-                        <li class="px-2"><a href="">Nosotros</a></li>
-                        <li class="px-2"><a href="">Servicios</a></li>
-                        <li class="px-2"><a href="">Galería</a></li>
-                        <li class="px-2"><a href="">Contacto</a></li>
+                        <li class="px-2 hover:text-green"><a href="">Inicio</a></li>
+                        <li class="px-2 hover:text-green"><a href="#wellcome">Nosotros</a></li>
+                        <li class="px-2 hover:text-green"><a href="#services">Servicios</a></li>
+                        <li class="px-2 hover:text-green"><a href="#feast">Galería</a></li>
+                        <li class="px-2 hover:text-green"><a href="#contact">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -41,19 +41,19 @@
                 <div class="language w-1/6">
                     <a class="bg-white p-2" href="">En</a>
                 </div>
-                <div class="temperature w-2/6">30°</div>
+                <div class="temperature w-2/6">30° C°</div>
                 <div class="rrss w-3/6 justify-between align-middle">
-                    <a href=""><img class="inline-block mx-1" src="{{ asset('img/facebook.svg') }}" alt=""></a>
-                    <a href=""><img class="inline-block mx-1" src="{{ asset('img/instagram.svg') }}" alt=""></a>
-                    <a href=""><img class="inline-block mx-1" src="{{ asset('img/twitter.svg') }}" alt=""></a>
-                    <a href=""><img class="inline-block mx-1" src="{{ asset('img/tiktok.svg') }}" alt=""></a>
+                    <a class="hover:bg-green pb-2 pt-1 px-1 rounded-full" href=""><img class="inline-block mx-1" src="{{ asset('img/facebook.svg') }}" alt=""></a>
+                    <a class="hover:bg-green pb-2 pt-1 px-1 rounded-full" href=""><img class="inline-block mx-1" src="{{ asset('img/instagram.svg') }}" alt=""></a>
+                    <a class="hover:bg-green pb-2 pt-1 px-1 rounded-full" href=""><img class="inline-block mx-1" src="{{ asset('img/twitter.svg') }}" alt=""></a>
+                    <a class="hover:bg-green pb-2 pt-1 px-1 rounded-full" href=""><img class="inline-block mx-1" src="{{ asset('img/tiktok.svg') }}" alt=""></a>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <main>
-    <div id="banner" class="">
+    <div id="banner" class="mt-[60px]">
             <img class="" src="{{ asset('img/banner.jpg') }}" alt="">
     </div>
     <div id="wellcome" class="container mx-auto flex p-6">
@@ -103,7 +103,8 @@
                         <h1 class="py-1">Experiencias</h1>
                         <h1 class="py-1 text-green">Diseño de Eventos</h1>
                         <p class="py-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p class="py-1 text-center"><a href="">VER MÁS</a></p>
+                        <div class="py-1 flex">
+                            <a class="mx-auto flecha text-xs font-light flex py-2 pl-4 hover:pb-0.5" href=""><span class="my-auto ">VER MÁS</span> <img class="w-12 my-auto" src="{{ asset('img/flecha.png') }}" alt=""></a></div>
                     </div>
                     <div class="py-8 align-middle swiper-pagination relative"></div>
                 </div>
@@ -145,7 +146,8 @@
                         <button id="slider-button-left" class="swiper-button-prev group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !-translate-y-8 !left-0 !text-gray-400 hover:!text-white" data-carousel-prev></button>
                         <button id="slider-button-right" class="swiper-button-next group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !-translate-y-8  !right-0 !text-gray-400 hover:!text-white" data-carousel-next></button>
                     </div>
-                    <p class="py-1 text-center"><a href="">VER MÁS</a></p>
+                    <div class="py-1 flex">
+                    <a class="mx-auto flecha text-xs font-light flex py-2 pl-4 hover:pb-0.5" href=""><span class="my-auto ">VER MÁS</span> <img class="w-12 my-auto" src="{{ asset('img/flecha.png') }}" alt=""></a></div>
                 </div>
             </div>
         </div>
@@ -344,6 +346,9 @@
 
     </div>
 </footer>
+<div class="quotation fixed rotate-[270deg] end-[-50px] top-40 bg-white p-3 rounded-t-full z-10 shadow shadow-gray-500/50">
+    <a class="text-green text-xs" href="#contact">Solicita una cotización</a>
+</div>
 </body>
 
 <script type="text/javascript">

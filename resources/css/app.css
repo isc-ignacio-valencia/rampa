@@ -20,7 +20,6 @@ html{
 .rrss img{
     width: 16px;
 }
-
 .swiper-wrapper {
     width: 100%;
     height: max-content !important;
@@ -80,9 +79,9 @@ img.insta-icon{
     margin-left: 165px;
     letter-spacing: 5px;
 }
-footer a.flecha:hover img{
+a.flecha:hover img{
     width: 3.5rem;
 }
-footer .left-bottom a:hover img{
+footer .left-bottom a:hover img, .rrss a:hover img{
     filter: invert(1);
 }
