@@ -21,5 +21,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'], function(){
     return view('home');
 });
+Route::post('/', [HomeController::class, 'mail']);
 
 //Route::get('/user/{id}', [UserController::class, 'show']);

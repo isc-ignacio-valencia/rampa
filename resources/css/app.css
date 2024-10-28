@@ -5,8 +5,16 @@
 html{
     font-family: "Barlow", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+@font-face {
+    font-family: 'DIN Next LT Pro Condensed';
+    src: url("../../assets/img/brand/Gellix-Regular.woff2") format('woff2');
+  }
 .language a{
     border: 1px #fff solid;
     border-radius: 30px;
     box-shadow: 0px 0px 6px #00000029;
 }
+.rrss img{
+    width: 16px;
+}
+
