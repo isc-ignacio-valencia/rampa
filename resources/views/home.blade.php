@@ -13,6 +13,8 @@
   integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
   crossorigin="anonymous"></script>
 <script src="https://www.google.com/recaptcha/api.js?render={{ env('GOOGLE_RECAPTCHA_KEY') }}"></script>
+<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
 <header class="bg-green-light">
@@ -55,20 +57,65 @@
     </div>
     <div id="wellcome" class="container mx-auto flex p-6">
         <div class="w-1/4 px-6 my-auto">
-            <h1 class="uppercase text-3xl scale-y-150 mb-2">Bienvenido a</h1>
-            <img class="max-w-48" src="{{ asset('img/logo.svg') }}" alt="">
+            <h1 class="uppercase text-4xl scale-y- mb-2 font-din-next">Bienvenido a</h1>
+            <img class="max-w-40" src="{{ asset('img/logo.svg') }}" alt="">
         </div>
         <div class="w-3/4 px-6 text-sm">
-            <p class="text-xs uppercase underline decoration-2 underline-offset-4 decoration-gray-400 py-2">Guadalajara, Jalisco, México</p>
+            <p class="text-xs uppercase underline decoration-2 underline-offset-4 decoration-gray-400 py-2 font-din-next">Guadalajara, Jalisco, México</p>
             <p class="text-xs text-green py-2">DÉ A SUS INVITADOS UNA RAZÓN PARA ASOMBRARSE</p>
             <p class="text-xs py-2">Desde lujosas bodas ambientadas con caminos llenos de flores de los lugares históricos de Guadalajara y sus alrededores, hasta elaborados eventos corporativos que fomentan las conexiones de la compañía, RAMPA IIII tiene el don de transformar las celebraciones significativas en experiencias inolvidables.</p>
         </div>
     </div>
-    <div id="services" class="container mx-auto bg-green-light">
-        <div>
-            <h1>NUESTROS SERVICIOS</h1>
+    <div id="services" class="bg-green-light p-6">
+        <div class="mx-auto container p-3">
+            <h1 class="text-5xl">NUESTROS SERVICIOS</h1>
             <p>Pequeños detalles que hacen la diferencia</p>
         </div>
+        <div class="mx-auto container p-3 flex">
+            {{-- Swiper --}}
+            <div class="w-full relative flex items-center">
+                <div class="w-3/5 mx-0 swiper default-carousel swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="flex justify-center items-center">
+                                <img src="{{ asset('img/services-slide-1.png') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex justify-center items-center">
+                                <img src="{{ asset('img/services-slide-2.png') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex justify-center items-center">
+                                <img src="{{ asset('img/services-slide-3.png') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-8 lg:justify-start justify-center">
+                    <button id="slider-button-left" class="swiper-button-prev group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !top-2/4 !-translate-y-8 !left-0 !text-gray-400 hover:!text-white" data-carousel-prev>
+                        
+                    </button>
+                    <button id="slider-button-right" class="swiper-button-next group !p-2 flex justify-center items-center !w-12 !h-12 transition-all !top-2/4 !-translate-y-8  !right-0 !text-gray-400 hover:!text-white" data-carousel-next>
+                        
+                        </button>
+                    </div>
+                    {{-- <div class="swiper-pagination"></div> --}}
+                </div>
+            
+                <div class="w-2/5">
+                    <div class="bg-white px-12 p-8">
+                        <h1 class="py-1">Experiencias</h1>
+                        <h1 class="py-1 text-green">Diseño de Eventos</h1>
+                        <p class="py-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p class="py-1 text-center"><a href="">VER MÁS</a></p>
+                    </div>
+                    <div class="py-8 align-middle swiper-pagination relative"></div>
+                </div>
+            </div>
+        </div>
+        
+        
     </div>
     <div id="feast" class="feast"></div>
     <div id="socialmedia" class=""></div>
@@ -167,6 +214,19 @@
                 $('#contactForm').unbind('submit').submit();
             });;
         });
+    });
+</script>
+<script>
+    var swiper = new Swiper(".default-carousel", {
+    loop: true,
+    pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    },
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    },
     });
 </script>
 </html>

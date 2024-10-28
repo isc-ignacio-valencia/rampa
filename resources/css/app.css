@@ -7,8 +7,11 @@ html{
 }
 @font-face {
     font-family: 'DIN Next LT Pro Condensed';
-    src: url("../../assets/img/brand/Gellix-Regular.woff2") format('woff2');
-  }
+    src: url("../../public/fonts/DINNextLTPro-LightCondensed.woff2") format('woff2');
+}
+/* .font-din-next{
+    font-family: 'DIN Next LT Pro Condensed', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+} */
 .language a{
     border: 1px #fff solid;
     border-radius: 30px;
@@ -18,3 +21,30 @@ html{
     width: 16px;
 }
 
+.swiper-wrapper {
+    width: 100%;
+    height: max-content !important;
+    padding-bottom: 64px !important;
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    position: relative;
+}
+.swiper.mx-0{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.swiper-pagination.relative{
+    position: relative;
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    background: transparent;
+        border: #000 solid 1px;
+        width: 15px;
+        height: 15px;
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    width: 18px;
+    height: 18px;
+    background: #a5d5bb;
+    border: none;
+}

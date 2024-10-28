@@ -9,10 +9,13 @@ export default {
   theme: {
     extend: {
       colors: {
-      'green': '#a5d5bb',
-      'green-light': '#f2f9f5',
+        'green': '#a5d5bb',
+        'green-light': '#f2f9f5',
+      },
+      fontFamily: {
+        'din-next': ["DIN Next LT Pro Condensed", 'Helvetica', 'Arial', 'sans-serif'],
+      },
     },
-  },
     
   },
   plugins: [
