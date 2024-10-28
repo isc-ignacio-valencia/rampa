@@ -309,19 +309,38 @@
 </main>
 <footer class="flex">
     <div class="w-2/5 container">
-        <div class="bg-green-light mr-6 pl-36 py-20">
-            <h2>VER</h2>
-            <h1>MAPA DE SITIO</h1>
+        <div class="bg-green-light pl-36 py-20">
+            <a class="flecha font-light w-full flex py-2 " href=""><span class="my-auto text-xl">VER<br>MAPA DE SITIO</span> <img class="w-12 my-auto" src="{{ asset('img/flecha.png') }}" alt=""></a>
         </div>
-        <div class=" justify-between align-middle">
-            <a href=""><img class="inline-block mx-1" src="{{ asset('img/facebook.svg') }}" alt=""></a>
-            <a href=""><img class="inline-block mx-1" src="{{ asset('img/instagram.svg') }}" alt=""></a>
-            <a href=""><img class="inline-block mx-1" src="{{ asset('img/twitter.svg') }}" alt=""></a>
-            <a href=""><img class="inline-block mx-1" src="{{ asset('img/tiktok.svg') }}" alt=""></a>
+        <div class="left-bottom flex px-20 py-6 justify-between align-middle">
+            <a class="hover:bg-green p-2 rounded-full" href=""><img class="inline-block mx-1" src="{{ asset('img/facebook.svg') }}" alt=""></a>
+            <a class="hover:bg-green p-2 rounded-full" href=""><img class="inline-block mx-1" src="{{ asset('img/instagram.svg') }}" alt=""></a>
+            <a class="hover:bg-green p-2 rounded-full" href=""><img class="inline-block mx-1" src="{{ asset('img/twitter.svg') }}" alt=""></a>
+            <a class="hover:bg-green p-2 rounded-full" href=""><img class="inline-block mx-1" src="{{ asset('img/tiktok.svg') }}" alt=""></a>
         </div>
     </div>
-    <div class="w-3/5 bg-green-light ml-6">
-        <h1>algo</h1>
+    <div class="w-3/5 bg-green-light ml-20 flex py-12 px-20 align-middle">
+        <div class="w-1/2 align-middle">
+            <div class="py-4">
+                <img class="w-3/4" src="{{ asset('img/logo.svg') }}" alt="">
+            </div>
+            <div class="py-3 border-b border-solid border-1 border-green">
+                <p>PASEO DEL PRADO 387,</p>
+                <p>LOMAS DEL VALLE, 45129</p>
+            </div>
+            <div class="py-3 border-b border-solid border-1 border-green flex">
+                <div class="border border-solid border-1 border-gray-500 rounded-full p-2">
+                <img class="w-4 " src="{{ asset('img/telephone.svg') }}" alt="">
+                </div>
+                <span class="text-2xl">+52 33 364 83 636</span>
+            </div>
+            <div class="py-3">
+                <a href="">WWW.RAMPA4@OMNILIFE.COM</a>
+            </div>
+        </div>
+        <div class="right flex w-1/2 my-auto ">
+            <a class="flecha text-xs font-light w-full flex py-2 pl-4" href=""><span class="my-auto">VER MAPA</span> <img class="w-12 my-auto" src="{{ asset('img/flecha.png') }}" alt=""></a>
+        </div>
 
     </div>
 </footer>

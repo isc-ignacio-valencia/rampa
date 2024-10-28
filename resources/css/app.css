@@ -80,3 +80,9 @@ img.insta-icon{
     margin-left: 165px;
     letter-spacing: 5px;
 }
+footer a.flecha:hover img{
+    width: 3.5rem;
+}
+footer .left-bottom a:hover img{
+    filter: invert(1);
+}
