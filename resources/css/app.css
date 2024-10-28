@@ -36,15 +36,39 @@ html{
 .swiper-pagination.relative{
     position: relative;
 }
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+#services .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, #services .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
     background: transparent;
-        border: #000 solid 1px;
-        width: 15px;
-        height: 15px;
+    border: #000 solid 1px;
+    width: 15px;
+    height: 15px;
 }
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+#services .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active, #services .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
     width: 18px;
     height: 18px;
     background: #a5d5bb;
     border: none;
+}
+
+img.insta-icon{
+    position: absolute;
+    filter: contrast(0);
+    top: 10px;
+    left: 10px;
+}
+#socialmedia .swiper-slide:hover img.insta-icon{
+    filter: invert(1);
+}
+
+#socialmedia .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, #socialmedia .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    background: #000;
+    opacity: unset;
+}
+#socialmedia .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active, #socialmedia .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    width: 10px;
+    height: 10px;
+    background: #a5d5bb;
+    opacity: unset;
+}
+#socialmedia .swiper-wrapper {
+    padding-bottom: 48px !important;
 }
