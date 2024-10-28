@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Rules\ReCaptcha;
+use Illuminate\Http\RedirectResponse;
 
 class HomeController extends Controller
 {
@@ -13,12 +15,13 @@ class HomeController extends Controller
         ]);
     }
 
-    public function mail(Request $request)
+    public function mail(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'email' => ['required'],
             'fullName' => ['required'],
             'message' => ['required'],
+            'g-recaptcha-response' => ['required', new ReCaptcha],
         ]);
 
         $fullName = $request->fullName;
@@ -36,8 +39,9 @@ class HomeController extends Controller
             'message'  => $message,
         ]);
 
-        return view('home', [
-            'todoChido' => "Mensaje enviado con éxito",
-        ]);
+        // return view('home', [
+        //     'todoChido' => "Mensaje enviado con éxito",
+        // ]);
+        return redirect()->back()->with(['todoChido' => 'Contact Form Submit Successfully']);
     }
 }

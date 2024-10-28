@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+  integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+  crossorigin="anonymous"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('GOOGLE_RECAPTCHA_KEY') }}"></script>
 </head>
 <body>
 <header class="bg-green-light">
@@ -81,7 +86,7 @@
         @isset($todoChido)
             <h1>{{$todoChido}}</h1>
         @endisset
-        <form action="/" method="POST">
+        <form id="contactForm" action="/" method="POST">
             @csrf
             <div class="py-12">
                 <div class="mt-8 max-w-md">
@@ -112,10 +117,10 @@
                           name="eventKind"
                           class="mt-0 block w-full border-0 border-b-2 border-gray-200 pl-0.5 pr-10 focus:border-black focus:ring-0"
                         >
-                          <option>Corporate event</option>
-                          <option>Wedding</option>
-                          <option>Birthday</option>
-                          <option>Other</option>
+                          <option>Cultural</option>
+                          <option>Festival</option>
+                          <option>Deportivo</option>
+                          <option>Otro</option>
                         </select>
                       </label>
                     <label class="block">
@@ -139,6 +144,9 @@
                   </div>
                 </div>
               </div>
+              @if ($errors->has('g-recaptcha-response'))
+                <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+            @endif
               <input type="submit" value="Enviar">
         </form>
     </div>
@@ -147,4 +155,18 @@
 
 </footer>
 </body>
+
+<script type="text/javascript">
+    $('#contactForm').submit(function(event) {
+        event.preventDefault();
+        grecaptcha.ready(function() {
+            console.log('si entra');
+            
+            grecaptcha.execute("{{ env('GOOGLE_RECAPTCHA_KEY') }}", {action: 'subscribe_newsletter'}).then(function(token) {
+                $('#contactForm').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                $('#contactForm').unbind('submit').submit();
+            });;
+        });
+    });
+</script>
 </html>
