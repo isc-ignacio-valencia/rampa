@@ -72,3 +72,11 @@ img.insta-icon{
 #socialmedia .swiper-wrapper {
     padding-bottom: 48px !important;
 }
+
+.date-form h2{
+    margin-top: -45px;
+}
+.date-form span{
+    margin-left: 165px;
+    letter-spacing: 5px;
+}

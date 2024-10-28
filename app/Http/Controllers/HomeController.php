@@ -39,9 +39,6 @@ class HomeController extends Controller
             'message'  => $message,
         ]);
 
-        // return view('home', [
-        //     'todoChido' => "Mensaje enviado con éxito",
-        // ]);
-        return redirect()->back()->with(['todoChido' => 'Contact Form Submit Successfully']);
+        return redirect()->back()->with(['successMessage' => 'Contact Form Submit Successfully'],);
     }
 }

@@ -11,6 +11,7 @@ export default {
       colors: {
         'green': '#a5d5bb',
         'green-light': '#f2f9f5',
+        'greenlight': '#f2f9f5',
       },
       fontFamily: {
         'din-next': ["DIN Next LT Pro Condensed", 'Helvetica', 'Arial', 'sans-serif'],

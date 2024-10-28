@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rampa</title>
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -209,90 +210,120 @@
                 </div>
             </div>
     </div>
-    <div id="contact" class="">
+    <div id="contact" class="p-6">
         <div class="mx-auto container p-3">
-            <h1 class="text-5xl">BANQUETE</h1>
-            <p>Decoración que resaltan los platillos que enamoran el alma</p>
+            <h1 class="text-5xl">SOLICITAR INFORMACIÓN</h1>
+            {{-- <h2 class="py-2">LUNES 28 DE OCTUBRE 2024</h2> --}}
         </div>
-       @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-        @isset($todoChido)
-            <h1>{{$todoChido}}</h1>
-        @endisset
-        <form id="contactForm" action="/" method="POST">
-            @csrf
-            <div class="py-12">
-                <div class="mt-8 max-w-md">
-                  <div class="grid grid-cols-1 gap-6">
-                    <label class="block">
-                      <span class="text-gray-700">Nombre*</span>
-                      <input
-                        name="fullName"
-                        type="text"
-                        
-                        class="mt-0 block w-full border-0 border-b-2 border-gray-200 px-0.5 focus:border-black focus:ring-0"
-                        placeholder=""
-                      />
-                    </label>
-                    <label class="block">
-                      <span class="text-gray-700">Correo Electrónico*</span>
-                      <input
-                        name="email"
-                        type="email"
-                        
-                        class="mt-0 block w-full border-0 border-b-2 border-gray-200 px-0.5 focus:border-black focus:ring-0"
-                        placeholder="john@example.com"
-                      />
-                    </label>
-                    <label class="block">
-                        <span class="text-gray-700">Tipo de evento</span>
-                        <select
-                          name="eventKind"
-                          class="mt-0 block w-full border-0 border-b-2 border-gray-200 pl-0.5 pr-10 focus:border-black focus:ring-0"
-                        >
-                          <option>Cultural</option>
-                          <option>Festival</option>
-                          <option>Deportivo</option>
-                          <option>Otro</option>
-                        </select>
-                      </label>
-                    <label class="block">
-                      <span class="text-gray-700">Fecha</span>
-                      <input
-                        name="day"
-                        type="text"
-                        class="mt-0 block w-full border-0 border-b-2 border-gray-200 px-0.5 focus:border-black focus:ring-0"
-                      />
-                    </label>
-                    
-                    <label class="block">
-                      <textarea
-                        name="message"
-                        
-                        class="mt-0 block w-full border-0 border-b-2 border-gray-200 px-0.5 focus:border-black focus:ring-0"
-                        rows="2"
-                        placeholder="Mensaje"
-                      ></textarea>
-                    </label>
-                  </div>
+        <div class="mx-auto container p-3">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li class="text-white bg-red-600 text-center">{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-              </div>
-              @if ($errors->has('g-recaptcha-response'))
-                <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
             @endif
-              <input type="submit" value="Enviar">
-        </form>
+            @isset($successMessage)
+                <span class="bg-green">{{$successMessage}}</span>
+            @endisset
+            <form id="contactForm" action="/#contact" method="POST">
+                @csrf
+                <div class=" w-full">
+                    <div class="mt-8 w-full flex">
+                        <div class=" p-3 w-2/3">
+                            <div class="date-form">
+                            <span class="text-green font-din-next font-black italic text-5xl">2024</span>
+                            <h2 class="pb-6 mb-6">LUNES 28 DE OCTUBRE</h2>
+                            </div>
+                            <label class="flex p-3 mt-6 ">
+                            <span class="ps-3 w-1/2 text-end">NOMBRE COMPLETO</span><span class="text-green pe-3">*</span>
+                            <input
+                                name="fullName"
+                                type="text"
+                                
+                                class="w-1/2 mt-0 flex border-0 border-b-2 border-green-light py-0 focus:border-green focus:ring-0"
+                                placeholder=""
+                            />
+                            </label>
+                            <label class="flex p-3">
+                            <span class="ps-3 w-1/2 text-end">CORREO ELECTRÓNICO</span><span class="text-green pe-3">*</span>
+                            <input
+                                name="email"
+                                type="email"
+                                
+                                class="mt-0 flex w-1/2 border-0 border-b-2 border-green-light py-0 focus:border-green focus:ring-0"
+                            />
+                            </label>
+                            <label class="flex p-3">
+                                <span class="px-3 w-1/2 text-end">TIPO DE EVENTO</span>
+                                <select
+                                name="eventKind"
+                                class="mt-0 flex w-1/2 border-0 border-b-2 border-green-light py-0 focus:border-green focus:ring-0"
+                                >
+                                <option>Boda</option>
+                                <option>XV Años</option>
+                                <option>Aniversario</option>
+                                <option>Corporativo</option>
+                                <option>Otro</option>
+                                </select>
+                            </label>
+                            <label class="flex p-3">
+                            <span class="px-3 w-1/2 text-end">FECHA DE EVENTO ESTIMADO</span>
+                            <input
+                                name="day"
+                                type="text"
+                                class="mt-0 flex w-1/2 border-0 border-b-2 border-green-light py-0 focus:border-green focus:ring-0"
+                            />
+                            </label>
+                            <label class="flex p-3">
+                                <span class="px-3 w-1/2 text-end text-green text-xs">*CAMPOS OBLIGATORIOS</span>
+                                </label>
+                        </div>
+                        <div class=" w-1/3 p-3">
+                            <label class="flex">
+                            <textarea
+                                name="message"
+                                
+                                class="mt-0 flex border-2 border-green-light rounded-md focus:border-green focus:ring-0"
+                                rows="12"
+                                placeholder="Mensaje"
+                            ></textarea>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                {{-- @if ($errors->has('g-recaptcha-response'))
+                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                @endif --}}
+                <div class="justify-center flex">
+                    <input
+                        type="submit"
+                        value="ENVIAR"
+                        class="justify-center bg-green py-4 rounded-full text-white text-2xl font-light w-1/3 cursor-pointer">
+                </div>
+            </form>
+        </div>
     </div>
 </main>
-<footer>
+<footer class="flex">
+    <div class="w-2/5 container">
+        <div class="bg-green-light mr-6 pl-36 py-20">
+            <h2>VER</h2>
+            <h1>MAPA DE SITIO</h1>
+        </div>
+        <div class=" justify-between align-middle">
+            <a href=""><img class="inline-block mx-1" src="{{ asset('img/facebook.svg') }}" alt=""></a>
+            <a href=""><img class="inline-block mx-1" src="{{ asset('img/instagram.svg') }}" alt=""></a>
+            <a href=""><img class="inline-block mx-1" src="{{ asset('img/twitter.svg') }}" alt=""></a>
+            <a href=""><img class="inline-block mx-1" src="{{ asset('img/tiktok.svg') }}" alt=""></a>
+        </div>
+    </div>
+    <div class="w-3/5 bg-green-light ml-6">
+        <h1>algo</h1>
 
+    </div>
 </footer>
 </body>
 
