@@ -78,6 +78,9 @@
             </ul>
         </div>
         @endif
+        @isset($todoChido)
+            <h1>{{$todoChido}}</h1>
+        @endisset
         <form action="/" method="POST">
             @csrf
             <div class="py-12">
